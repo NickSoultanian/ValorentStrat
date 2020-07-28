@@ -17,10 +17,21 @@
   background-color: #21EBD9 ;
   min-height: 100vh;
   display: flex;
+  flex-direction: row;
+  align-items: Flex-start;
+  justify-content: Left;
+  vertical-align: top;
+  text-align: left;
+  font-size: calc(10px + 2vmin);
+  color: Black;
+}
+.App-body {
+  min-height: 50vh;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(5px + 1vmin);
   color: Black;
 }
 
