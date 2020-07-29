@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 // See ../copy-to-example.sh
 import './MapContainer.css';
 import { MapInteractionCSS } from 'react-map-interaction';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import { Button } from 'react-bootstrap';
+import { DropdownButton } from 'react-bootstrap';
+import Dropdown from 'react-bootstrap/DropDown';
 import { slide as Menu } from 'react-burger-menu'
 
 class MapContainer extends Component {
@@ -18,7 +22,7 @@ class MapContainer extends Component {
 
         const offset = 50;
         const style = {
-            position: 'relative',
+            position: 'absolute',
             float: 'right',
             top: offset,
             right: offset,
@@ -30,14 +34,17 @@ class MapContainer extends Component {
         const { scale, translation } = this.state;
         return (
             <div style={style}>
-                <Menu>
-                    <a id="home" className="menu-item" href="/">Home</a>
-                    <a id="about" className="menu-item" href="/about">About</a>
-                    <a id="contact" className="menu-item" href="/contact">Contact</a>
-                    <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
-                </Menu>
+                <ButtonGroup vertical>
+                    top: 0
+                <DropdownButton as={ButtonGroup} title="Dropdown" id="bg-vertical-dropdown-2">
+
+                    <Button>
+                        Button
+                    </Button>
+                    <Button>Button</Button>
+                </DropdownButton>
+                </ButtonGroup>
                 <MapInteractionCSS
-                    
                     scale={scale}
                     translation={translation}
                     onChange={({ scale, translation }) => this.setState({ scale, translation })}
