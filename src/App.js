@@ -20,14 +20,6 @@ function App() {
       <p>
         Alright so Hopefully we have something good going on here.
       </p>
-      <a
-          //className="App-link"
-          //href="https://reactjs.org"
-          //target="_blank"
-          //rel="noopener noreferrer"
-      >
-        Get ready to Git Guud
-      </a>
       </body>
     </div>
   );

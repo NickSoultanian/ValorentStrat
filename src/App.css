@@ -1,36 +1,61 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #21EBD9 ;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: Flex-start;
-  justify-content: Left;
-  vertical-align: top;
   text-align: left;
+  background-color: #FC5571;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 36px;
+  padding-top: 30px;
+  padding-left: 15px;
+  display: block;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+
+  font-weight: 700;
+  line-height: 1;
+  margin: 0 0 20px;
+}
+
+h1 {
+
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.App-header {
+
+  padding: 20px;
+  padding-right: 100px;
+  border-spacing: 2em;
+  box-sizing: border-box;
+  width: 40%;
+  border: 5px solid Black;
+  float: left;
   font-size: calc(10px + 2vmin);
   color: Black;
+
+}
+p {
+  font-size: 1em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 .App-body {
+  padding: 30px;
   min-height: 50vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
+  text-align: left;
+  width: 100%;
   font-size: calc(5px + 1vmin);
   color: Black;
 }
