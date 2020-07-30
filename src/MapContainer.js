@@ -20,15 +20,15 @@ class MapContainer extends Component {
     render() {
         // set container node at an origin other than client 0,0 to make sure we handle this case
 
-        const offset = 50;
+        const offset = 200;
         const style = {
             zIndex: 0,
             position: 'absolute',
             float: 'right',
             top: offset,
-            right: offset,
-            width: `calc(50vw - ${offset}px)`,
-            height: `calc(70vh - ${offset}px)`,
+            right: offset-100,
+            width: `calc(50vw - ${offset-150}px)`,
+            height: `calc(70vh - ${offset-150}px)`,
             border: '5px Solid Black'
         }
         const style2 = {
@@ -36,7 +36,27 @@ class MapContainer extends Component {
             position: 'absolute',
             float: 'right',
             top: offset + 10,
-            right: offset + 830,
+            right: offset + 730,
+            //width: `calc(50vw - ${offset}px)`,
+            //height: `calc(70vh - ${offset}px)`,
+            //border: '5px Solid Black'
+        }
+        const style3 = {
+            zIndex: 1,
+            position: 'absolute',
+            float: 'right',
+            top: offset - 50,
+            right: offset + 630,
+            //width: `calc(50vw - ${offset}px)`,
+            //height: `calc(70vh - ${offset}px)`,
+            //border: '5px Solid Black'
+        }
+        const style4 = {
+            zIndex: 1,
+            position: 'absolute',
+            float: 'right',
+            top: offset - 90,
+            right: offset + 630,
             //width: `calc(50vw - ${offset}px)`,
             //height: `calc(70vh - ${offset}px)`,
             //border: '5px Solid Black'
@@ -44,7 +64,25 @@ class MapContainer extends Component {
 
         const { scale, translation } = this.state;
         return (
+
             <div>
+                <div style = {style4}>
+                    <h3>Choose your map</h3>
+                </div>
+                <div style= {style3} className="mb-2">
+                    <Button variant="primary" size="lg">
+                        Split
+                    </Button>{' '}
+                    <Button variant="secondary" size="lg">
+                        Bind
+                    </Button>{' '}
+                    <Button variant="tertiary" size="lg">
+                        Ascent
+                    </Button>{' '}
+                    <Button variant="quaternary" size="lg">
+                        Haven
+                    </Button>{' '}
+                </div>
                 <div style={ style2 }>
                     <ButtonGroup vertical>
                         <DropdownButton as={ButtonGroup} title="Dropdown" id="bg-vertical-dropdown-2">
