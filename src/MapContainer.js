@@ -7,13 +7,19 @@ import { Button } from 'react-bootstrap';
 import { DropdownButton } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/DropDown';
 import { slide as Menu } from 'react-burger-menu'
+import { render } from "react-dom";
+
+import CanvasDraw from "react-canvas-draw";
 
 class MapContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
             scale: 1,
-            translation: { x: 0, y: 0 }
+            translation: { x: 0, y: 0 },
+            color: "#00FFFFFF",
+            brushRadius: 10,
+            lazyRadius: 12
         };
     }
 
@@ -107,8 +113,11 @@ class MapContainer extends Component {
                         showControls
                     >
                         <div style={{ position: 'relative' }}>
-                      
-                            <img src= {require('./assets/splitNoLabels.png')} alt={"this is the map"}/>
+                            <CanvasDraw
+                                imgSrc={require('./assets/splitNoLabels.png')} alt={"this is the map"}
+                                hideGrid
+                                backgroundColor = "#0000000"
+                            />
                         </div>
                     </MapInteractionCSS>
                 </div>
