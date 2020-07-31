@@ -31,51 +31,47 @@ class MapContainer extends Component {
             zIndex: 0,
             position: 'absolute',
             float: 'right',
-            top: offset,
-            right: offset-100,
-            width: `calc(50vw - ${offset-150}px)`,
-            height: `calc(70vh - ${offset-150}px)`,
-            border: '5px Solid Black'
+            //top: offset,
+            //right: offset-100,
+            width: '100%',
+            height: `100%`,
+            minWidth: '1000px',
+            minHeight: '1000px',
+
         }
-        const style2 = {
+        const styleDropDown = {
             zIndex: 1,
             position: 'absolute',
             float: 'right',
-            top: offset + 10,
-            right: offset + 730,
-            //width: `calc(50vw - ${offset}px)`,
-            //height: `calc(70vh - ${offset}px)`,
-            //border: '5px Solid Black'
+            top: `calc(10vw - ${offset-150}px)`,
+            right: `calc(70vh - ${offset-150}px)`,
+
         }
-        const style3 = {
+        const styleMapButton = {
             zIndex: 1,
             position: 'absolute',
             float: 'right',
             top: offset - 50,
             right: offset + 630,
-            //width: `calc(50vw - ${offset}px)`,
-            //height: `calc(70vh - ${offset}px)`,
-            //border: '5px Solid Black'
+
         }
-        const style4 = {
+        const styleMapTitle = {
             zIndex: 1,
             position: 'absolute',
             float: 'right',
             top: offset - 90,
             right: offset + 630,
-            //width: `calc(50vw - ${offset}px)`,
-            //height: `calc(70vh - ${offset}px)`,
-            //border: '5px Solid Black'
+
         }
 
         const { scale, translation } = this.state;
         return (
 
             <div>
-                <div style = {style4}>
+                <div style = {styleMapTitle}>
                     <h3>Choose your map</h3>
                 </div>
-                <div style= {style3} className="mb-2">
+                <div style= {styleMapButton} className="mb-2">
                     <Button variant="primary" size="lg">
                         Split
                     </Button>{' '}
@@ -89,7 +85,7 @@ class MapContainer extends Component {
                         Haven
                     </Button>{' '}
                 </div>
-                <div style={ style2 }>
+                <div style={ styleDropDown }>
                     <ButtonGroup vertical>
                         <DropdownButton as={ButtonGroup} title="Dropdown" id="bg-vertical-dropdown-2">
                             <Button>
