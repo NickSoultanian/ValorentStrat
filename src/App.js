@@ -7,13 +7,10 @@ function App() {
         zIndex: 1,
     }
   return (
-    <div style={ style } className="App">
-      <header className="App-header">
-        <h1>
-          Valorant Strats
-        </h1>
-      </header>
-    </div>
+      <div>
+
+      </div>
+
   );
 }
 

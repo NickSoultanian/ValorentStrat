@@ -28,6 +28,7 @@ class MapContainer extends Component {
 
         const offset = 200;
         const style = {
+            backgroundColor: '#ff4654',
             zIndex: 0,
             position: 'absolute',
             float: 'right',
@@ -63,11 +64,25 @@ class MapContainer extends Component {
             right: offset + 630,
 
         }
+        const titleTitle = {
+            zIndex: 1,
+            position: 'absolute',
+            float: 'left',
+
+
+        }
 
         const { scale, translation } = this.state;
         return (
 
             <div>
+                <div style= {titleTitle} >
+                    <header className="App-header">
+                        <h1>
+                            Valorant Strats
+                        </h1>
+                    </header>
+                </div>
                 <div style = {styleMapTitle}>
                     <h3>Choose your map</h3>
                 </div>
