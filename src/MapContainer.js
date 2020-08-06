@@ -19,9 +19,29 @@ class MapContainer extends Component {
             translation: { x: 0, y: 0 },
             color: "#00FFFFFF",
             brushRadius: 10,
-            lazyRadius: 12
+            lazyRadius: 12,
+            disabled: true,
+            disableZoom: false,
+            disablePan: false
         };
+        this.toggleDraw = this.toggleDraw.bind(this)
     }
+
+        toggleDraw() {
+            if (this.state.disabled) {
+                this.setState({
+                    disabled: false,
+                    //disableZoom: true,
+                    disablePan: true
+                })
+            } else {
+                this.setState({
+                    disabled: true,
+                    // disableZoom: false,
+                    disablePan: false
+                })
+            }
+        }
 
     render() {
         // set container node at an origin other than client 0,0 to make sure we handle this case
@@ -38,6 +58,7 @@ class MapContainer extends Component {
             height: `100%`,
             minWidth: '1000px',
             minHeight: '1000px',
+
 
         }
         const styleDropDown = {
@@ -68,11 +89,10 @@ class MapContainer extends Component {
             zIndex: 1,
             position: 'absolute',
             float: 'left',
-
-
         }
-
+        
         const { scale, translation } = this.state;
+
         return (
 
             <div>
@@ -122,14 +142,21 @@ class MapContainer extends Component {
                         minScale={0.05}
                         maxScale={5}
                         showControls
+                        disableZoom = {this.state.disableZoom}
+                        disablePan = {this.state.disablePan}
                     >
-                        <div style={{ position: 'relative' }}>
                             <CanvasDraw
                                 imgSrc={require('./assets/splitNoLabels.png')} alt={"this is the map"}
                                 hideGrid
                                 backgroundColor = "#0000000"
+                                disabled = {this.state.disabled}
                             />
-                        </div>
+                        <Button variant="primary" size="lg" onClick = {this.toggleDraw}>
+                            Toggle
+                        </Button>{' '}
+
+
+
                     </MapInteractionCSS>
                 </div>
             </div>
